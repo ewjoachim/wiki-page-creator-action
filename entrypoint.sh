@@ -54,7 +54,7 @@ git config user.email $ACTION_MAIL
 git pull https://${GH_PAT}@github.com/$OWNER/$REPO_NAME.wiki.git
 cd ..
 
-FILES=$(find $MD_FOLDER -maxdepth 1 -type f -name '*.md' -execdir basename '{}' ';')
+FILES=$(find $MD_FOLDER -maxdepth 1 -type f -name '*' -execdir basename '{}' ';')
 for i in $FILES; do
     realFileName=${i}
     if [[ $TRANSLATE -ne 0 ]]; then
